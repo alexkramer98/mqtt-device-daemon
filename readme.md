@@ -7,13 +7,14 @@ Also, monitoring the TV's state via ping requests is unreliable as the broker co
 
 Created for RPI but will probably work on most Linux platforms/hardware.
 
-The hardware below can in many cases be adapted to your needs by changing the ```.env``` file. In some cases (i.e no Hisense TV or no switch used) you might need to fork this repo.
+The hardware below can in many cases be adapted to your needs by changing the ```.env``` file. In some cases (i.e no Hisense TV, no switch or totally different devices used) you might need to edit the code or create a custom Device or Communicator. The code should be self-explanatory.
 
 ## Hardware used (much can be adapted to your needs):
 * Raspberry Pi 2
 * Hisense 75A7100F TV
 * Feintech vms04201 Matrix switch
 * Arris VIP5202 KPN (Dutch tv provider) box
+* Denon AVR X1000 (Not used in this project, but integrated in the ```universal media player``` in Home Assistant.
 
 ## Features:
 * Connects to an MQTT broker (which can be shared with Home Assistant).
