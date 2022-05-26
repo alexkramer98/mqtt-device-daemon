@@ -32,6 +32,9 @@ The hardware below can in many cases be adapted to your needs by changing the ``
 * ????
 * Profit.
 
+## Install:
+* run ```npm install``` or ```yarn install``` 
+
 ## Build:
 * run ```npx tsc```
 
