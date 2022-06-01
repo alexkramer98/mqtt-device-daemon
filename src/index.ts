@@ -19,7 +19,7 @@ const cecAdapter = new CecAdapter({
     executablePath: process.env.CEC_CTL_EXECUTABLE_PATH
 })
 const infraredAdapter = new InfraredAdapter({
-    executablePath: process.env.IRSEND_CLIENT_EXECUTABLE_PATH
+    executablePath: process.env.IRSEND_EXECUTABLE_PATH
 })
 
 const tvDeviceController = new TvDeviceController({
@@ -35,7 +35,7 @@ const tvDeviceController = new TvDeviceController({
 }, cecAdapter)
 const matrixDeviceController = new MatrixDeviceController({
     remoteName: process.env.MATRIX_LIRC_REMOTE_NAME,
-    sourceMap: Object.entries(MatrixSourceMap) as any
+    sourceMap: Object.fromEntries(Object.entries(MatrixSourceMap))
 }, infraredAdapter)
 
 await mqttAdapter.initialize()
@@ -56,7 +56,6 @@ mqttDaemon.registerSubscriber({
         }
     }
 })
-
 mqttDaemon.registerSubscriber({
     device: 'home/living/matrix',
     attribute: 'source',
