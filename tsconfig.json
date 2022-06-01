@@ -1,6 +1,9 @@
 {
     "compilerOptions": {
         "target": "esnext",
-        "outDir": "build/"
+        "outDir": "build/",
+        "moduleResolution": "node",
+        "module": "esnext",
+        "allowSyntheticDefaultImports": true,
     }
 }
