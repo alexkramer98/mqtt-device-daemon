@@ -62,7 +62,9 @@ export default class MqttAdapter extends AbstractAdapter implements SubscribeAda
         }
 
         try {
-            this.mqttClient.publish(subject, data)
+            this.mqttClient.publish(subject, data, {
+                retain: true
+            })
         } catch (error) {
             throw new AdapterPublishError(`Encountered an error while publishing to "${subject}" with data "${data}".`)
         }
